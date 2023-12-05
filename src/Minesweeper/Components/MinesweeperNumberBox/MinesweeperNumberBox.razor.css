@@ -1,0 +1,75 @@
+.counter {
+    width: 13px;
+    height: 25px;
+    background-size: 100% 100%;
+}
+
+.counter- {
+    background-image: url('texture/counter/counter-.svg');
+}
+
+.counter0 {
+    background-image: url('texture/counter/counter0.svg');
+}
+
+.counter1 {
+    background-image: url('texture/counter/counter1.svg');
+}
+
+.counter2 {
+    background-image: url('texture/counter/counter2.svg');
+}
+
+.counter3 {
+    background-image: url('texture/counter/counter3.svg');
+}
+
+.counter4 {
+    background-image: url('texture/counter/counter4.svg');
+}
+
+.counter5 {
+    background-image: url('texture/counter/counter5.svg');
+}
+
+.counter6 {
+    background-image: url('texture/counter/counter6.svg');
+}
+
+.counter7 {
+    background-image: url('texture/counter/counter7.svg');
+}
+
+.counter8 {
+    background-image: url('texture/counter/counter8.svg');
+}
+
+.counter9 {
+    background-image: url('texture/counter/counter9.svg');
+}
+
+.border {
+    width: 1px;
+    height: 27px;
+    background-size: 100% 100%;
+}
+
+.counterleft {
+    background-image: url('texture/border/counterleft.svg');
+}
+
+.counterright {
+    background-image: url('texture/border/counterright.svg');
+}
+
+.countermiddle {
+    background-image: url('texture/border/countermiddle.svg');
+    display: flex;
+    align-items: center;
+    width: 13px;
+    height: 27px;
+    background-size: 100% 100%;
+}
+
+
+

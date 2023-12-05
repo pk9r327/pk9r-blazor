@@ -1,0 +1,130 @@
+.bottom {
+    background-image: url('texture/border/bottom.svg');
+    background-size: 100% 100%;
+    width: 16px;
+    height: 9px;
+}
+
+.bottomleft {
+    background-image: url('texture/border/bottomleft.svg');
+    background-size: 100% 100%;
+    width: 12px;
+    height: 9px;
+}
+
+.bottomright {
+    background-image: url('texture/border/bottomright.svg');
+    background-size: 100% 100%;
+    width: 12px;
+    height: 9px;
+}
+
+.bottomtop {
+    background-image: url('texture/border/bottomtop.svg');
+    background-size: 100% 100%;
+    width: 12px;
+    height: 9px;
+}
+
+.counterleft {
+    background-image: url('texture/border/counterleft.svg');
+    background-size: 100% 100%;
+    width: 1px;
+    height: 27px;
+}
+
+.counterright {
+    background-image: url('texture/border/counterright.svg');
+    background-size: 100% 100%;
+    width: 1px;
+    height: 27px;
+}
+
+.countermiddle {
+    background-image: url('texture/border/countermiddle.svg');
+    background-size: 100% 100%;
+    width: 13px;
+    height: 27px;
+}
+
+.left {
+    background-image: url('texture/border/left.svg');
+    background-size: 100% 100%;
+    width: 12px;
+    height: 16px;
+}
+
+.middleleft {
+background-image: url('texture/border/middleleft.svg');
+    background-size: 100% 100%;
+    width: 12px;
+    height: 15px;
+}
+
+.middleright {
+    background-image: url('texture/border/middleright.svg');
+    background-size: 100% 100%;
+    width: 12px;
+    height: 15px;
+}
+
+.middletop {
+    background-image: url('texture/border/middletop.svg');
+    background-size: 100% 100%;
+    width: 16px;
+    height: 15px;
+}
+
+.right {
+    background-image: url('texture/border/right.svg');
+    background-size: 100% 100%;
+    width: 12px;
+    height: 16px;
+}
+
+.top {
+    background-image: url('texture/border/top.svg');
+    background-size: 100% 100%;
+    width: 16px;
+    height: 12px;
+}
+
+.topleft {
+    background-image: url('texture/border/topleft.svg');
+    background-size: 100% 100%;
+    width: 12px;
+    height: 12px;
+}
+
+.topright {
+    background-image: url('texture/border/topright.svg');
+    background-size: 100% 100%;
+    width: 12px;
+    height: 12px;
+}
+
+.face {
+    width: 26px;
+    height: 26px;
+    background-size: 100% 100%;
+}
+
+.clickface {
+    background-image: url('texture/faces/clickface.svg');
+}
+
+.lostface {
+    background-image: url('texture/faces/lostface.svg');
+}
+
+.smileface {
+    background-image: url('texture/faces/smileface.svg');
+}
+
+.smilefacedown {
+    background-image: url('texture/faces/smilefacedown.svg');
+}
+
+.winface {
+    background-image: url('texture/faces/winface.svg');
+}

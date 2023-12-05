@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C93F4317-B997-4E7B-BA7A-16AF12085171}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Minesweeper", "Minesweeper", "{6E83CDE9-FB4E-4A1E-8F3F-D8CB170872BC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{EB5BE228-43BB-47E2-8B7A-35364B532D44}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Minesweeper", "Minesweeper", "{AFFB3102-8B68-45A9-8ECF-EE316692B929}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pk9r.Minesweeper", "examples\Minesweeper\Pk9r.Minesweeper\Pk9r.Minesweeper.csproj", "{56DE4E45-E3E4-424C-B21A-FB0D6A35AA50}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pk9r.Minesweeper.Client", "examples\Minesweeper\Pk9r.Minesweeper.Client\Pk9r.Minesweeper.Client.csproj", "{51C2035A-C973-4890-A3DA-1418065C4C2B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pk9r.Minesweeper.Components", "src\Minesweeper\Pk9r.Minesweeper.Components.csproj", "{2C689503-006B-47D6-9FA3-1ED4C6E2FD6A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{56DE4E45-E3E4-424C-B21A-FB0D6A35AA50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56DE4E45-E3E4-424C-B21A-FB0D6A35AA50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56DE4E45-E3E4-424C-B21A-FB0D6A35AA50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56DE4E45-E3E4-424C-B21A-FB0D6A35AA50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51C2035A-C973-4890-A3DA-1418065C4C2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51C2035A-C973-4890-A3DA-1418065C4C2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51C2035A-C973-4890-A3DA-1418065C4C2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51C2035A-C973-4890-A3DA-1418065C4C2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C689503-006B-47D6-9FA3-1ED4C6E2FD6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C689503-006B-47D6-9FA3-1ED4C6E2FD6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C689503-006B-47D6-9FA3-1ED4C6E2FD6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C689503-006B-47D6-9FA3-1ED4C6E2FD6A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6E83CDE9-FB4E-4A1E-8F3F-D8CB170872BC} = {C93F4317-B997-4E7B-BA7A-16AF12085171}
+		{AFFB3102-8B68-45A9-8ECF-EE316692B929} = {EB5BE228-43BB-47E2-8B7A-35364B532D44}
+		{56DE4E45-E3E4-424C-B21A-FB0D6A35AA50} = {AFFB3102-8B68-45A9-8ECF-EE316692B929}
+		{51C2035A-C973-4890-A3DA-1418065C4C2B} = {AFFB3102-8B68-45A9-8ECF-EE316692B929}
+		{2C689503-006B-47D6-9FA3-1ED4C6E2FD6A} = {6E83CDE9-FB4E-4A1E-8F3F-D8CB170872BC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4B70F612-14EE-465E-884E-F76E332F4751}
+	EndGlobalSection
+EndGlobal

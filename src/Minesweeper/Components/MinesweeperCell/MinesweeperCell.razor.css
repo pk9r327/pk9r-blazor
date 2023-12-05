@@ -1,0 +1,61 @@
+.cell {
+    width: 16px;
+    height: 16px;
+    background-size: 100% 100%;
+}
+
+.cell-blast {
+    background-image: url('texture/cells/blast.svg');
+}
+
+.cell-cell1 {
+    background-image: url('texture/cells/cell1.svg');
+}
+
+.cell-cell2 {
+    background-image: url('texture/cells/cell2.svg');
+}
+
+.cell-cell3 {
+    background-image: url('texture/cells/cell3.svg');
+}
+
+.cell-cell4 {
+    background-image: url('texture/cells/cell4.svg');
+}
+
+.cell-cell5 {
+    background-image: url('texture/cells/cell5.svg');
+}
+
+.cell-cell6 {
+    background-image: url('texture/cells/cell6.svg');
+}
+
+.cell-cell7 {
+    background-image: url('texture/cells/cell7.svg');
+}
+
+.cell-cell8 {
+    background-image: url('texture/cells/cell8.svg');
+}
+
+.cell-celldown {
+    background-image: url('texture/cells/celldown.svg');
+}
+
+.cell-cellflag {
+    background-image: url('texture/cells/cellflag.svg');
+}
+
+.cell-cellmine {
+    background-image: url('texture/cells/cellmine.svg');
+}
+
+.cell-cellup {
+    background-image: url('texture/cells/cellup.svg');
+}
+
+.cell-falsemine {
+    background-image: url('texture/cells/falsemine.svg');
+}

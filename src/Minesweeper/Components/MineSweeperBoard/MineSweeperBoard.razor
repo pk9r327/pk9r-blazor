@@ -1,0 +1,65 @@
+@namespace Pk9r.Minesweeper.Components
+
+<div style="display: flex; flex-direction: column; width: min-content;">
+    <div style="display: inline-flex;">
+        <div class="topleft" />
+        @for (int i = 0; i < Width; i++)
+        {
+            <div class="top" />
+        }
+        <div class="topright" />
+    </div>
+
+    <div style="background: #c0c0c0; display: inline-flex; justify-content: space-between; align-items: center;">
+        <div>
+            <div class="left" />
+            <div class="left" />
+        </div>
+        <MinesweeperNumberBox Values="010" />
+        <div class="face smileface" />
+        <MinesweeperNumberBox Values="000" />
+        <div>
+            <div class="right" />
+            <div class="right" />
+        </div>
+    </div>
+
+    <div style="display: inline-flex; align-items: end;">
+        <div class="middleleft" />
+        @for (int i = 0; i < Width; i++)
+        {
+            <div class="middletop" />
+        }
+        <div class="middleright" />
+    </div>
+
+    @for (int i = 0; i < Height; i++)
+    {
+        <div style="display: inline-flex;">
+            <div class="left" />
+            @for (int j = 0; j < Width; j++)
+            {
+                <MinesweeperCell Value="cellup" />
+            }
+            <div class="right" />
+        </div>
+    }
+
+    <div style="display: inline-flex;">
+        <div class="bottomleft" />
+        @for (int i = 0; i < Width; i++)
+        {
+            <div class="bottom" />
+        }
+        <div class="bottomright" />
+    </div>
+</div>
+
+
+@code {
+    [Parameter]
+    public int Width { get; set; } = 16;
+
+    [Parameter]
+    public int Height { get; set; } = 16;
+}
