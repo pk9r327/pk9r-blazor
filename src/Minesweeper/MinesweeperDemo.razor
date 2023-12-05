@@ -1,0 +1,34 @@
+﻿<div class="my-component">
+    This component is defined in the <strong>Pk9r.Minesweeper.Components</strong> library.
+</div>
+
+<MinesweeperNumberBox Values="099" />
+
+<div style="display:inline-flex;">
+
+    @foreach (var cell in Enum.GetValues(typeof(Cell)))
+    {
+        <MinesweeperCell Value="@((Cell)cell)" />
+    }
+</div>
+
+@if (_gameState != null)
+{
+    <MinesweeperBoard GameState="_gameState" />
+}
+
+<MinesweeperGameSettings />
+
+<FluentButton @onclick=HandleTest>Test</FluentButton>
+
+@code {
+    GameState _gameState = new GameState();
+
+    private async Task HandleTest()
+    {
+        _gameState.SetMines(5, 5);
+        _gameState.RevealAllCells();
+        await Task.Delay(100);
+        await InvokeAsync(StateHasChanged);
+    }
+}

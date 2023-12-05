@@ -4,11 +4,12 @@ using Microsoft.AspNetCore.Components.Web;
 namespace Pk9r.Minesweeper.Components;
 public partial class MinesweeperBoard
 {
-    [Parameter]
-    public int Width { get; set; } = 16;
+    public int Width => GameState.GameModeInstance.Width;
+
+    public int Height => GameState.GameModeInstance.Height;
 
     [Parameter]
-    public int Height { get; set; } = 16;
+    public GameState GameState { get; set; } = new();
 
     private void OnContextMenu(MouseEventArgs mouseEventArgs)
     {

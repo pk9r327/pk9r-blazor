@@ -1,0 +1,18 @@
+@namespace Pk9r.Minesweeper.Components
+@inherits FluentComponentBase
+
+<div>
+    <FluentCard>
+        <div>
+            <FluentRadioGroup TValue="IGameMode">
+                <FluentRadio Value="@(GameMode.Beginner)">Beginner</FluentRadio>
+                <FluentRadio Value="@(GameMode.Intermediate)">Intermediate</FluentRadio>
+                <FluentRadio Value="@(GameMode.Expert)">Intermediate</FluentRadio>
+            </FluentRadioGroup>
+
+            <FluentCheckbox>Marks (?)</FluentCheckbox>
+
+            <FluentButton>New Game</FluentButton>
+        </div>
+    </FluentCard>
+</div>
