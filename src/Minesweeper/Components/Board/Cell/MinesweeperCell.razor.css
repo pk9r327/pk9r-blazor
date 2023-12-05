@@ -4,58 +4,58 @@
     background-size: 100% 100%;
 }
 
-.cell-blast {
+.blast {
     background-image: url('texture/cells/blast.svg');
 }
 
-.cell-cell1 {
+.cell1 {
     background-image: url('texture/cells/cell1.svg');
 }
 
-.cell-cell2 {
+.cell2 {
     background-image: url('texture/cells/cell2.svg');
 }
 
-.cell-cell3 {
+.cell3 {
     background-image: url('texture/cells/cell3.svg');
 }
 
-.cell-cell4 {
+.cell4 {
     background-image: url('texture/cells/cell4.svg');
 }
 
-.cell-cell5 {
+.cell5 {
     background-image: url('texture/cells/cell5.svg');
 }
 
-.cell-cell6 {
+.cell6 {
     background-image: url('texture/cells/cell6.svg');
 }
 
-.cell-cell7 {
+.cell7 {
     background-image: url('texture/cells/cell7.svg');
 }
 
-.cell-cell8 {
+.cell8 {
     background-image: url('texture/cells/cell8.svg');
 }
 
-.cell-celldown {
+.celldown {
     background-image: url('texture/cells/celldown.svg');
 }
 
-.cell-cellflag {
+.cellflag {
     background-image: url('texture/cells/cellflag.svg');
 }
 
-.cell-cellmine {
+.cellmine {
     background-image: url('texture/cells/cellmine.svg');
 }
 
-.cell-cellup {
+.cellup {
     background-image: url('texture/cells/cellup.svg');
 }
 
-.cell-falsemine {
+.falsemine {
     background-image: url('texture/cells/falsemine.svg');
 }

@@ -1,13 +1,18 @@
+/* CSS for Minesweeper Number Box Component */
+
+/* General counter style */
 .counter {
     width: 13px;
     height: 25px;
     background-size: 100% 100%;
 }
 
+/* Counter style when no number is displayed */
 .counter- {
     background-image: url('texture/counter/counter-.svg');
 }
 
+/* Counter styles for numbers 0-9 */
 .counter0 {
     background-image: url('texture/counter/counter0.svg');
 }
@@ -48,18 +53,19 @@
     background-image: url('texture/counter/counter9.svg');
 }
 
-.border {
-    width: 1px;
-    height: 27px;
-    background-size: 100% 100%;
-}
-
+/* Counter border styles */
 .counterleft {
     background-image: url('texture/border/counterleft.svg');
+    background-size: 100% 100%;
+    width: 1px;
+    height: 27px;
 }
 
 .counterright {
     background-image: url('texture/border/counterright.svg');
+    background-size: 100% 100%;
+    width: 1px;
+    height: 27px;
 }
 
 .countermiddle {
@@ -70,6 +76,3 @@
     height: 27px;
     background-size: 100% 100%;
 }
-
-
-

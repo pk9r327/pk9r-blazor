@@ -1,6 +1,8 @@
 @namespace Pk9r.Minesweeper.Components
+@inherits FluentComponentBase
 
-<div style="display: flex; flex-direction: column; width: min-content;">
+<div style="display: flex; flex-direction: column; width: min-content;"
+     oncontextmenu="return false;" ondrag="return false;" ondragstart="return false;">
     <div style="display: inline-flex;">
         <div class="topleft" />
         @for (int i = 0; i < Width; i++)
@@ -16,7 +18,7 @@
             <div class="left" />
         </div>
         <MinesweeperNumberBox Values="010" />
-        <div class="face smileface" />
+        <MinesweeperFace />
         <MinesweeperNumberBox Values="000" />
         <div>
             <div class="right" />
@@ -39,7 +41,7 @@
             <div class="left" />
             @for (int j = 0; j < Width; j++)
             {
-                <MinesweeperCell Value="cellup" />
+                <MinesweeperCell />
             }
             <div class="right" />
         </div>
@@ -54,12 +56,3 @@
         <div class="bottomright" />
     </div>
 </div>
-
-
-@code {
-    [Parameter]
-    public int Width { get; set; } = 16;
-
-    [Parameter]
-    public int Height { get; set; } = 16;
-}
