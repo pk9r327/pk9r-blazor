@@ -17,9 +17,4 @@
     <PackageReference Include="Microsoft.FluentUI.AspNetCore.Components.Icons" Version="4.1.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Components\MineSweeperBoard\" />
-    <Folder Include="Components\MinesweeperCell\" />
-  </ItemGroup>
-
 </Project>

@@ -5,20 +5,11 @@
 <MinesweeperNumberBox Values="099" />
 
 <div style="display:inline-flex;">
-    <MinesweeperCell Value="blast" />
-    <MinesweeperCell Value="cell1" />
-    <MinesweeperCell Value="cell2" />
-    <MinesweeperCell Value="cell3" />
-    <MinesweeperCell Value="cell4" />
-    <MinesweeperCell Value="cell5" />
-    <MinesweeperCell Value="cell6" />
-    <MinesweeperCell Value="cell7" />
-    <MinesweeperCell Value="cell8" />
-    <MinesweeperCell Value="celldown" />
-    <MinesweeperCell Value="cellflag" />
-    <MinesweeperCell Value="cellmine" />
-    <MinesweeperCell Value="cellup" />
-    <MinesweeperCell Value="falsemine" />
+
+    @foreach (var cell in Enum.GetValues(typeof(Cell)))
+    {
+        <MinesweeperCell Value="@((Cell)cell)" />
+    }
 </div>
 
-<MineSweeperBoard />
+<MinesweeperBoard Width="30" Height="16" />

@@ -1,0 +1,25 @@
+.face {
+    width: 26px;
+    height: 26px;
+    background-size: 100% 100%;
+}
+
+.clickface {
+    background-image: url('texture/faces/clickface.svg');
+}
+
+.lostface {
+    background-image: url('texture/faces/lostface.svg');
+}
+
+.smileface {
+    background-image: url('texture/faces/smileface.svg');
+}
+
+.smilefacedown {
+    background-image: url('texture/faces/smilefacedown.svg');
+}
+
+.winface {
+    background-image: url('texture/faces/winface.svg');
+}
