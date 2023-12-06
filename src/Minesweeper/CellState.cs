@@ -23,17 +23,17 @@ public class CellState(int x, int y)
     /// <summary>
     /// Indicates whether the cell contains a mine.
     /// </summary>
-    public bool IsMine { get; set; }
+    public bool IsMine { get; set; } = false;
 
     /// <summary>
     /// Indicates whether the cell has been flagged by the player.
     /// </summary>
-    public bool IsFlagged { get; set; }
+    public bool IsFlagged { get; set; } = false;
 
     /// <summary>
     /// Indicates whether the cell has been revealed by the player.
     /// </summary>
-    public bool IsRevealed { get; set; }
+    public bool IsRevealed { get; set; } = false;
 
     /// <summary>
     /// Indicates whether the cell contains a mine that caused the player's death.

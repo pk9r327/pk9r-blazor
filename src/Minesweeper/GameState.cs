@@ -3,15 +3,32 @@
 namespace Pk9r.Minesweeper.Components;
 public class GameState
 {
-    public IGameMode GameModeInstance { get; set; } = GameMode.Expert;
+    public IGameMode GameModeInstance { get; set; } = default!;
 
-    public CellState[] CellStates { get; set; }
+    public CellState[]? CellStates { get; private set; }
 
     public GameStatus GameStatus { get; set; }
 
     public int MinesNotFlagged { get; private set; }
 
     public GameState()
+    {
+        NewGame(GameMode.Expert);
+    }
+
+    public void NewGame(IGameMode gameMode)
+    {
+        GameModeInstance = gameMode;
+        NewGame();
+    }
+
+    public void NewGame()
+    {
+        Initialize();
+        GameStatus = GameStatus.AwaitingFirstMove;
+    }
+
+    private void Initialize()
     {
         int height = GameModeInstance.Height;
         int width = GameModeInstance.Width;
@@ -29,7 +46,6 @@ public class GameState
 
         CellStates = cellStates;
         MinesNotFlagged = GameModeInstance.Mines;
-        GameStatus = GameStatus.AwaitingFirstMove;
     }
 
     public void FirstMove(int x, int y)
@@ -39,6 +55,12 @@ public class GameState
 
     public void SetMines(int xFirstMove, int yFirstMove)
     {
+        if (CellStates is null)
+        {
+            throw new InvalidOperationException("Game state is not initialized.");
+        }
+        if 
+
         var mineCells = Random.Shared.TakeRandom(CellStates, GameModeInstance.Mines + 9);
 
         int count = 0;
