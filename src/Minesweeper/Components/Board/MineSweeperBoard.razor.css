@@ -102,3 +102,65 @@ background-image: url('texture/border/middleleft.svg');
     width: 12px;
     height: 12px;
 }
+
+.cell {
+    width: 16px;
+    height: 16px;
+    background-size: 100% 100%;
+}
+
+.blast {
+    background-image: url('texture/cells/blast.svg');
+}
+
+.cell1 {
+    background-image: url('texture/cells/cell1.svg');
+}
+
+.cell2 {
+    background-image: url('texture/cells/cell2.svg');
+}
+
+.cell3 {
+    background-image: url('texture/cells/cell3.svg');
+}
+
+.cell4 {
+    background-image: url('texture/cells/cell4.svg');
+}
+
+.cell5 {
+    background-image: url('texture/cells/cell5.svg');
+}
+
+.cell6 {
+    background-image: url('texture/cells/cell6.svg');
+}
+
+.cell7 {
+    background-image: url('texture/cells/cell7.svg');
+}
+
+.cell8 {
+    background-image: url('texture/cells/cell8.svg');
+}
+
+.celldown {
+    background-image: url('texture/cells/celldown.svg');
+}
+
+.cellflag {
+    background-image: url('texture/cells/cellflag.svg');
+}
+
+.cellmine {
+    background-image: url('texture/cells/cellmine.svg');
+}
+
+.cellup {
+    background-image: url('texture/cells/cellup.svg');
+}
+
+.falsemine {
+    background-image: url('texture/cells/falsemine.svg');
+}

@@ -3,13 +3,15 @@
 namespace Pk9r.Minesweeper.Components;
 public class GameState
 {
-    public IGameMode GameModeInstance { get; set; } = default!;
+    public IGameMode GameModeInstance { get; private set; } = default!;
 
-    public CellState[]? CellStates { get; private set; }
+    public CellState[] CellStates { get; private set; } = default!;
 
     public GameStatus GameStatus { get; set; }
 
     public int MinesNotFlagged { get; private set; }
+
+    public event Action? OnChange;
 
     public GameState()
     {
@@ -26,6 +28,7 @@ public class GameState
     {
         Initialize();
         GameStatus = GameStatus.AwaitingFirstMove;
+        NotifyStateHasChanged();
     }
 
     private void Initialize()
@@ -55,12 +58,6 @@ public class GameState
 
     public void SetMines(int xFirstMove, int yFirstMove)
     {
-        if (CellStates is null)
-        {
-            throw new InvalidOperationException("Game state is not initialized.");
-        }
-        if 
-
         var mineCells = Random.Shared.TakeRandom(CellStates, GameModeInstance.Mines + 9);
 
         int count = 0;
@@ -148,6 +145,7 @@ public class GameState
         {
             cell.IsRevealed = true;
         }
+        NotifyStateHasChanged();
     }
 
     private bool IsInvalidMove()
@@ -163,5 +161,10 @@ public class GameState
         //}
 
         return false;
+    }
+
+    private void NotifyStateHasChanged()
+    {
+        OnChange?.Invoke();
     }
 }

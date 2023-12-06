@@ -1,10 +1,8 @@
 ﻿@page "/minesweeper"
-@attribute [StreamRendering]
-
 
 <h3>Minesweeper</h3>
 
-<MinesweeperDemo @rendermode="@(new InteractiveServerRenderMode(prerender: false))" />
+<MinesweeperDemo @rendermode="InteractiveServerWithoutPrerendering" />
 
 @code {
 

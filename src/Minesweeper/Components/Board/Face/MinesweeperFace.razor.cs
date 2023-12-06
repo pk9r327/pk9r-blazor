@@ -15,21 +15,20 @@ public partial class MinesweeperFace
     bool _isFocus = false;
 
     /// <summary>
+    /// Gets or sets the face of the Minesweeper game.
+    /// </summary>
+    private Face _face = Face.SmileFace;
+
+    /// <summary>
     /// Gets the CSS class value for the face.
     /// </summary>
     protected string? ClassValue => new CssBuilder(Class)
         .AddClass("face")
-        .AddClass(Face.ToAttributeValue())
+        .AddClass(_face.ToAttributeValue())
         .Build();
 
-    /// <summary>
-    /// Gets or sets the face of the Minesweeper game.
-    /// </summary>
-    [Parameter]
-    public Face Face { get; set; } = Face.SmileFace;
-
-    [Parameter]
-    public GameState GameState { get; set; }
+    //[Parameter]
+    //public EventCallback<GameState> GameStateChanged { get; set; }
 
     /// <summary>
     /// Handles the onmousedown event.
@@ -39,18 +38,21 @@ public partial class MinesweeperFace
         if (mouseEventArgs.Button == LeftMouseButton)
         {
             _isFocus = true;
-            Face = Face.SmileFaceDown;
+            _face = Face.SmileFaceDown;
         }
     }
 
     /// <summary>
     /// Handles the onmouseup event.
     /// </summary>
-    protected void HandleMouseUp(MouseEventArgs mouseEventArgs)
+    protected async Task HandleMouseUpAsync()
     {
         if (_isFocus)
         {
-            Face = Face.SmileFace;
+            _face = Face.SmileFace;
+            GameState.NewGame();
+            await Task.CompletedTask;
+            //await GameStateChanged.InvokeAsync(GameState);
         }
     }
 
@@ -58,7 +60,7 @@ public partial class MinesweeperFace
     {
         if (_isFocus)
         {
-            Face = Face.SmileFace;
+            _face = Face.SmileFace;
         }
     }
 }

@@ -1,34 +1,27 @@
-﻿<div class="my-component">
+﻿@inject GameState GameState
+
+<div class="my-component">
     This component is defined in the <strong>Pk9r.Minesweeper.Components</strong> library.
 </div>
 
 <MinesweeperNumberBox Values="099" />
 
-<div style="display:inline-flex;">
-
-    @foreach (var cell in Enum.GetValues(typeof(Cell)))
-    {
-        <MinesweeperCell Value="@((Cell)cell)" />
-    }
-</div>
-
-@if (_gameState != null)
-{
-    <MinesweeperBoard GameState="_gameState" />
-}
+<MinesweeperBoard />
 
 <MinesweeperGameSettings />
 
 <FluentButton @onclick=HandleTest>Test</FluentButton>
+<FluentButton @onclick=HandleTest2>Test2</FluentButton>
 
 @code {
-    GameState _gameState = new GameState();
-
-    private async Task HandleTest()
+    private void HandleTest()
     {
-        _gameState.SetMines(5, 5);
-        _gameState.RevealAllCells();
-        await Task.Delay(100);
-        await InvokeAsync(StateHasChanged);
+        GameState.SetMines(5, 5);
+        GameState.RevealAllCells();
+    }
+
+    private void HandleTest2()
+    {
+        GameState.NewGame();
     }
 }

@@ -1,7 +1,8 @@
 @namespace Pk9r.Minesweeper.Components
 @inherits FluentComponentBase
+@inject GameState GameState
 
 <div class="@ClassValue"
      @onmousedown="HandleMouseDown"
-     @onmouseup="HandleMouseUp"
+     @onmouseup="HandleMouseUpAsync"
      @onmouseout="HandleMouseOut" />

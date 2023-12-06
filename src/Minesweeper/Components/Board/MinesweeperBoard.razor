@@ -1,5 +1,6 @@
 @namespace Pk9r.Minesweeper.Components
 @inherits FluentComponentBase
+@inject GameState GameState
 
 <div style="display: flex; flex-direction: column; width: min-content;"
      oncontextmenu="return false;" ondrag="return false;" ondragstart="return false;">
@@ -18,7 +19,9 @@
             <div class="left" />
         </div>
         <MinesweeperNumberBox Values="010" />
+
         <MinesweeperFace />
+
         <MinesweeperNumberBox Values="000" />
         <div>
             <div class="right" />
@@ -43,26 +46,7 @@
 
             @for (int x = 0; x < Width; x++)
             {
-                var cellState = GameState.GetCellState(x, y);
-                @if (cellState.IsMine)
-                {
-                    <MinesweeperCell Value="Cell.CellMine" />
-                }
-                else if (!cellState.IsRevealed)
-                {
-                    <MinesweeperCell Value="Cell.CellUp" />
-                }
-                else
-                {
-                    @if (cellState.AdjacentMines == 0)
-                    {
-                        <MinesweeperCell Value="Cell.CellDown" />
-                    }
-                    else
-                    {
-                        <MinesweeperCell Value="(Cell)cellState.AdjacentMines" />
-                    }
-                }
+                @CellDisplay(GameState.GetCellState(x, y))
             }
 
             <div class="right" />
@@ -79,3 +63,24 @@
         <div class="bottomright" />
     </div>
 </div>
+
+@code {
+    private RenderFragment<CellState> CellDisplay = cellState =>
+    {
+        var cssBuilder = new CssBuilder()
+            .AddClass("cell");
+
+        if (cellState.IsMine)
+            cssBuilder.AddClass(Cell.CellMine.ToAttributeValue());
+        else if (!cellState.IsRevealed)
+            cssBuilder.AddClass(Cell.CellUp.ToAttributeValue());
+        else if (cellState.AdjacentMines == 0)
+            cssBuilder.AddClass(Cell.CellDown.ToAttributeValue());
+        else
+            cssBuilder.AddClass(((Cell)cellState.AdjacentMines).ToAttributeValue());
+
+        var classValue = cssBuilder.Build();
+
+        return@<div class="@classValue" />  ;
+    };
+}

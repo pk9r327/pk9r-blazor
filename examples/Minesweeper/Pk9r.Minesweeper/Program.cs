@@ -1,3 +1,4 @@
+using Microsoft.FluentUI.AspNetCore.Components;
 using Pk9r.Minesweeper.Components;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,6 +7,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
+
+builder.Services.AddHttpClient();
+builder.Services.AddPk9rMinesweeperComponents();
 
 var app = builder.Build();
 
