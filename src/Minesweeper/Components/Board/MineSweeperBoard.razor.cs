@@ -7,14 +7,10 @@ public partial class MinesweeperBoard : IDisposable
 
     public int Height => GameState.GameModeInstance.Height;
 
+
     protected override void OnInitialized()
     {
         GameState.OnChange += StateHasChanged;
-    }
-
-    private void OnContextMenu(MouseEventArgs mouseEventArgs)
-    {
-
     }
 
     public void Dispose()

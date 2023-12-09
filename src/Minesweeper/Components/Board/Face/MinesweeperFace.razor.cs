@@ -45,14 +45,14 @@ public partial class MinesweeperFace
     /// <summary>
     /// Handles the onmouseup event.
     /// </summary>
-    protected async Task HandleMouseUpAsync()
+    protected void HandleMouseUp()
     {
         if (_isFocus)
         {
+            _isFocus = false;
             _face = Face.SmileFace;
+
             GameState.NewGame();
-            await Task.CompletedTask;
-            //await GameStateChanged.InvokeAsync(GameState);
         }
     }
 
@@ -60,6 +60,7 @@ public partial class MinesweeperFace
     {
         if (_isFocus)
         {
+            _isFocus = false;
             _face = Face.SmileFace;
         }
     }

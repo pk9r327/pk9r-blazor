@@ -18,7 +18,7 @@
             <div class="left" />
             <div class="left" />
         </div>
-        <MinesweeperNumberBox Values="010" />
+        <MinesweeperNumberBox Values="@GameState.MinesNotFlagged.ToString("d3")" />
 
         <MinesweeperFace />
 
@@ -46,7 +46,22 @@
 
             @for (int x = 0; x < Width; x++)
             {
-                @CellDisplay(GameState.GetCellState(x, y))
+                var cellState = GameState.GetCellState(x, y);
+
+                var cssBuilder = new CssBuilder().AddClass("cell");
+
+                if (!cellState.IsRevealed)
+                    cssBuilder.AddClass(Cell.CellUp.ToAttributeValue());
+                else if (cellState.IsMine)
+                    cssBuilder.AddClass(Cell.CellMine.ToAttributeValue());
+                else if (cellState.AdjacentMines == 0)
+                    cssBuilder.AddClass(Cell.CellDown.ToAttributeValue());
+                else
+                    cssBuilder.AddClass(((Cell)cellState.AdjacentMines).ToAttributeValue());
+
+                var classValue = cssBuilder.Build();
+
+                <div class="@classValue" @onmouseup=@cellState.Action />
             }
 
             <div class="right" />
@@ -65,22 +80,8 @@
 </div>
 
 @code {
-    private RenderFragment<CellState> CellDisplay = cellState =>
+    private static void HandleCellMouseDown(CellState cellState)
     {
-        var cssBuilder = new CssBuilder()
-            .AddClass("cell");
-
-        if (cellState.IsMine)
-            cssBuilder.AddClass(Cell.CellMine.ToAttributeValue());
-        else if (!cellState.IsRevealed)
-            cssBuilder.AddClass(Cell.CellUp.ToAttributeValue());
-        else if (cellState.AdjacentMines == 0)
-            cssBuilder.AddClass(Cell.CellDown.ToAttributeValue());
-        else
-            cssBuilder.AddClass(((Cell)cellState.AdjacentMines).ToAttributeValue());
-
-        var classValue = cssBuilder.Build();
-
-        return@<div class="@classValue" />  ;
-    };
+        throw new NotImplementedException();
+    }
 }

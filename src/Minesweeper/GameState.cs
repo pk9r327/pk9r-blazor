@@ -7,6 +7,8 @@ public class GameState
 
     public CellState[] CellStates { get; private set; } = default!;
 
+    public List<CellState> MineCells { get; private set; } = [];
+
     public GameStatus GameStatus { get; set; }
 
     public int MinesNotFlagged { get; private set; }
@@ -31,6 +33,67 @@ public class GameState
         NotifyStateHasChanged();
     }
 
+    public void MakeMove(int x, int y)
+    {
+        if (IsInvalidMove())
+        {
+            return;
+        }
+
+        if (GameStatus == GameStatus.AwaitingFirstMove)
+        {
+            SetMines(x, y);
+            GameStatus = GameStatus.InProgress;
+        }
+
+        RevealCell(x, y);
+    }
+
+    private void RevealCell(int x, int y)
+    {
+        var currentCell = GetCellState(x, y);
+        currentCell.Reveal();
+
+        if (currentCell.IsMine)
+        {
+            //Timer.Stop();
+            GameStatus = GameStatus.Defeated;
+            RevealAllMines();
+            currentCell.IsDeathMine = true;
+        }
+        else
+        {
+            if (currentCell.AdjacentMines == 0)
+            {
+                RevealZeros(x, y);
+            }
+
+            CheckForCompletion();
+        }
+    }
+
+    private void RevealAllMines()
+    {
+        foreach (var mineCell in MineCells)
+            mineCell.IsRevealed = true;
+    }
+
+    private void RevealZeros(int x, int y)
+    {
+        var neighborCells = GetNeighbors(x, y)
+            .Where(cell => cell.IsRevealed == false);
+
+        foreach (var neighbor in neighborCells)
+        {
+            neighbor.IsRevealed = true;
+
+            if (neighbor.AdjacentMines == 0)
+            {
+                RevealZeros(neighbor.X, neighbor.Y);
+            }
+        }
+    }
+
     private void Initialize()
     {
         int height = GameModeInstance.Height;
@@ -43,7 +106,9 @@ public class GameState
         {
             for (int x = 0; x < width; x++)
             {
-                cellStates[count++] = new CellState(x, y);
+                var cellState = new CellState(x, y);
+                cellState.Action = (e) => MakeMove(cellState.X, cellState.Y);
+                cellStates[count++] = cellState;
             }
         }
 
@@ -51,14 +116,11 @@ public class GameState
         MinesNotFlagged = GameModeInstance.Mines;
     }
 
-    public void FirstMove(int x, int y)
-    {
-        GameStatus = GameStatus.InProgress;
-    }
-
     public void SetMines(int xFirstMove, int yFirstMove)
     {
         var mineCells = Random.Shared.TakeRandom(CellStates, GameModeInstance.Mines + 9);
+
+        MineCells.Clear();
 
         int count = 0;
         int index = 0;
@@ -79,6 +141,7 @@ public class GameState
             {
                 neighbor.AdjacentMines++;
             }
+            MineCells.Add(cell);
             count++;
         }
     }

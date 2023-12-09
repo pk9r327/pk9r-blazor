@@ -1,4 +1,6 @@
-﻿namespace Pk9r.Minesweeper.Components;
+﻿using Microsoft.AspNetCore.Components.Web;
+
+namespace Pk9r.Minesweeper.Components;
 
 /// <summary>
 /// Represents the state of a cell in a Minesweeper game.
@@ -64,4 +66,6 @@ public class CellState(int x, int y)
         IsRevealed = true;
         IsFlagged = false;
     }
+
+    public Action<MouseEventArgs>? Action { get; set; }
 }
