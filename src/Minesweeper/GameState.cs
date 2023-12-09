@@ -11,6 +11,8 @@ public class GameState
 
     public GameStatus GameStatus { get; set; }
 
+    public Face Face { get; set; } = Face.SmileFace;
+
     public int MinesNotFlagged { get; private set; }
 
     public event Action? OnChange;
@@ -107,7 +109,8 @@ public class GameState
             for (int x = 0; x < width; x++)
             {
                 var cellState = new CellState(x, y);
-                cellState.Action = (e) => MakeMove(cellState.X, cellState.Y);
+                cellState.OnMouseUp = (e) => MinesweeperBoard.HandleCellMouseUp(e, this, cellState);
+                cellState.OnMouseDown = (e) => MinesweeperBoard.HandleCellMouseDown(e, this, cellState);
                 cellStates[count++] = cellState;
             }
         }
@@ -226,7 +229,7 @@ public class GameState
         return false;
     }
 
-    private void NotifyStateHasChanged()
+    public void NotifyStateHasChanged()
     {
         OnChange?.Invoke();
     }

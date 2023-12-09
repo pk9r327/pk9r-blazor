@@ -50,18 +50,18 @@
 
                 var cssBuilder = new CssBuilder().AddClass("cell");
 
-                if (!cellState.IsRevealed)
-                    cssBuilder.AddClass(Cell.CellUp.ToAttributeValue());
-                else if (cellState.IsMine)
-                    cssBuilder.AddClass(Cell.CellMine.ToAttributeValue());
-                else if (cellState.AdjacentMines == 0)
-                    cssBuilder.AddClass(Cell.CellDown.ToAttributeValue());
-                else
-                    cssBuilder.AddClass(((Cell)cellState.AdjacentMines).ToAttributeValue());
+                var cell =
+                cellState.IsFlagged ? Cell.CellFlag :
+                !cellState.IsRevealed ? Cell.CellUp :
+                cellState.IsMine ? Cell.CellMine :
+                cellState.AdjacentMines == 0 ? Cell.CellDown :
+                (Cell)cellState.AdjacentMines;
+
+                cssBuilder.AddClass(cell.ToAttributeValue());
 
                 var classValue = cssBuilder.Build();
 
-                <div class="@classValue" @onmouseup=@cellState.Action />
+                <div class="@classValue" @onmouseup="@cellState.OnMouseUp" @onmousedown="@cellState.OnMouseDown" />
             }
 
             <div class="right" />
@@ -80,8 +80,5 @@
 </div>
 
 @code {
-    private static void HandleCellMouseDown(CellState cellState)
-    {
-        throw new NotImplementedException();
-    }
+
 }

@@ -67,5 +67,7 @@ public class CellState(int x, int y)
         IsFlagged = false;
     }
 
-    public Action<MouseEventArgs>? Action { get; set; }
+    public Action<MouseEventArgs> OnMouseUp { get; set; } = default!;
+
+    public Action<MouseEventArgs> OnMouseDown { get; set; } = default!;
 }
