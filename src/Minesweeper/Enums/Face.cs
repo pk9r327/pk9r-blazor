@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Pk9r.Minesweeper.Components;
+namespace Pk9r.Blazor.Minesweeper.Components;
 
 /// <summary>
 /// Represents the different faces that can be displayed in the game.

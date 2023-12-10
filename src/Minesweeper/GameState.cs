@@ -1,6 +1,6 @@
-﻿using Pk9r.Minesweeper.Components.Extensions;
+﻿using Pk9r.Blazor.Minesweeper.Components.Extensions;
 
-namespace Pk9r.Minesweeper.Components;
+namespace Pk9r.Blazor.Minesweeper.Components;
 public class GameState
 {
     public IGameMode GameModeInstance { get; private set; } = default!;

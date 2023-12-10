@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.FluentUI.AspNetCore.Components.Utilities;
 
-namespace Pk9r.Minesweeper.Components;
+namespace Pk9r.Blazor.Minesweeper.Components;
 public partial class MinesweeperNumberBox
 {
     [Parameter]

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components.Web;
 
-namespace Pk9r.Minesweeper.Components;
+namespace Pk9r.Blazor.Minesweeper.Components;
 
 /// <summary>
 /// Represents the state of a cell in a Minesweeper game.

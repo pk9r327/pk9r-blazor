@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Pk9r.Minesweeper.Client\Pk9r.Minesweeper.Client.csproj" />
+    <ProjectReference Include="..\Pk9r.Blazor.Minesweeper.Client\Pk9r.Blazor.Minesweeper.Client.csproj" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.0" />
   </ItemGroup>
 

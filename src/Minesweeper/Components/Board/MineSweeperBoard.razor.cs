@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Components.Web;
 
-namespace Pk9r.Minesweeper.Components;
+namespace Pk9r.Blazor.Minesweeper.Components;
 public partial class MinesweeperBoard : IDisposable
 {
     public int Width => GameState.GameModeInstance.Width;

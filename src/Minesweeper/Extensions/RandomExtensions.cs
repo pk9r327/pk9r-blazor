@@ -1,4 +1,4 @@
-﻿namespace Pk9r.Minesweeper.Components.Extensions;
+﻿namespace Pk9r.Blazor.Minesweeper.Components.Extensions;
 public static class RandomExtensions
 {
     public static IEnumerable<T> TakeRandom<T>(this Random random, IEnumerable<T> source, int count)

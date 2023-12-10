@@ -1,4 +1,4 @@
-﻿namespace Pk9r.Minesweeper.Components;
+﻿namespace Pk9r.Blazor.Minesweeper.Components;
 
 /// <summary>
 /// Interface for defining the game mode in Minesweeper.

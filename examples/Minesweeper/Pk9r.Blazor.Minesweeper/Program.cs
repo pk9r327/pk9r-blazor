@@ -1,5 +1,5 @@
 using Microsoft.FluentUI.AspNetCore.Components;
-using Pk9r.Minesweeper.Components;
+using Pk9r.Blazor.Minesweeper.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -33,6 +33,6 @@ app.UseAntiforgery();
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode()
     .AddInteractiveWebAssemblyRenderMode()
-    .AddAdditionalAssemblies(typeof(Pk9r.Minesweeper.Client._Imports).Assembly);
+    .AddAdditionalAssemblies(typeof(Pk9r.Blazor.Minesweeper.Client._Imports).Assembly);
 
 app.Run();
