@@ -1,0 +1,43 @@
+﻿.siteheader {
+    background-color: var(--neutral-layer-4) !important;
+    border-bottom: calc(var(--stroke-width) * 2px) solid var(--accent-fill-rest);
+    margin-bottom: 0 !important;
+}
+
+::deep .siteheader {
+    background-color: var(--neutral-layer-4) !important;
+    border-bottom: calc(var(--stroke-width) * 2px) solid var(--accent-fill-rest);
+    margin-bottom: 0 !important;
+}
+
+    ::deep .siteheader .logo {
+        width: 108px;
+        height: 23px;
+        grid-column: 1;
+    }
+
+    ::deep .siteheader .links {
+        padding-right: 10px;
+        display: flex;
+        align-items: center;
+    }
+
+    ::deep .siteheader .notifications {
+        padding-right: 10px;
+        display: flex;
+        align-items: center;
+    }
+
+    ::deep .siteheader .settings {
+        padding-right: 24px;
+        display: flex;
+        align-items: center;
+    }
+
+[dir="rtl"] ::deep .siteheader .settings {
+    padding: 0 0 0 20px;
+}
+
+[dir="rtl"] ::deep .siteheader .notifications {
+    padding: 0 0 0 20px;
+}

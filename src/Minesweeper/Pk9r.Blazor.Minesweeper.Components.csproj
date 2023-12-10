@@ -12,7 +12,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Core\Pk9r.Blazor.csproj" />
+		<ProjectReference Include="..\Core\Pk9r.Blazor.Components.csproj" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.0" />
 	</ItemGroup>
 

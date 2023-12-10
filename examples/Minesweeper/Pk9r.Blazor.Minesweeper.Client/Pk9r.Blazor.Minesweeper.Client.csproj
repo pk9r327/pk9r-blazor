@@ -12,4 +12,9 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\Layouts\FluentBlazorDemo\Pk9r.Blazor.Layouts.FluentBlazorDemo.Components.csproj" />
+    <ProjectReference Include="..\..\..\src\Minesweeper\Pk9r.Blazor.Minesweeper.Components.csproj" />
+  </ItemGroup>
+
 </Project>
