@@ -7,11 +7,12 @@ public partial class MinesweeperBoard : IDisposable
 
     public int Height => GameState.GameModeInstance.Height;
 
-    public static void HandleCellMouseUp(MouseEventArgs mouseEventArgs, GameState gameState, CellState cellState)
+    internal static void HandleCellMouseUp(MouseEventArgs mouseEventArgs, GameState gameState, CellState cellState)
     {
         if (mouseEventArgs.Button == 0)
         {
             gameState.Face = Face.SmileFace;
+            gameState.IsFocusCell = false;
             if (!cellState.IsFlagged)
             {
                 gameState.MakeMove(cellState.X, cellState.Y);
@@ -21,17 +22,34 @@ public partial class MinesweeperBoard : IDisposable
         }
     }
 
-    public static void HandleCellMouseDown(MouseEventArgs mouseEventArgs, GameState gameState, CellState cellState)
+    internal static void HandleCellMouseDown(MouseEventArgs mouseEventArgs, GameState gameState, CellState cellState)
     {
         if (mouseEventArgs.Button == 0)
         {
             gameState.Face = Face.ClickFace;
+            gameState.IsFocusCell = true;
             gameState.NotifyStateHasChanged();
         }
 
         if (mouseEventArgs.Buttons == 2)
         {
             cellState.Flag();
+        }
+    }
+
+    internal static void HandleCellMouseOut(MouseEventArgs mouseEventArgs, GameState gameState, CellState cellState)
+    {
+        if (gameState.HoveredCell == cellState)
+        {
+            gameState.HoveredCell = null;
+        }
+    }
+
+    internal static void HandleCellMouseOver(MouseEventArgs mouseEventArgs, GameState gameState, CellState cellState)
+    {
+        if (gameState.HoveredCell != cellState)
+        {
+            gameState.HoveredCell = cellState;
         }
     }
 

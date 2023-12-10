@@ -52,7 +52,7 @@
 
                 var cell =
                 cellState.IsFlagged ? Cell.CellFlag :
-                !cellState.IsRevealed ? Cell.CellUp :
+                !cellState.IsRevealed ? (GameState.IsFocusCell && cellState == GameState.HoveredCell) ? Cell.CellDown : Cell.CellUp :
                 cellState.IsMine ? Cell.CellMine :
                 cellState.AdjacentMines == 0 ? Cell.CellDown :
                 (Cell)cellState.AdjacentMines;
@@ -61,7 +61,11 @@
 
                 var classValue = cssBuilder.Build();
 
-                <div class="@classValue" @onmouseup="@cellState.OnMouseUp" @onmousedown="@cellState.OnMouseDown" />
+                <div class="@classValue"
+                     @onmouseup="@cellState.OnMouseUp"
+                     @onmousedown="@cellState.OnMouseDown"
+                     @onmouseout="@cellState.OnMouseOut"
+                     @onmouseover="@cellState.OnMouseOver" />
             }
 
             <div class="right" />

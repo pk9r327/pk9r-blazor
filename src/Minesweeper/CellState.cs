@@ -70,4 +70,8 @@ public class CellState(int x, int y)
     public Action<MouseEventArgs> OnMouseUp { get; set; } = default!;
 
     public Action<MouseEventArgs> OnMouseDown { get; set; } = default!;
+
+    public Action<MouseEventArgs> OnMouseOut { get; set; } = default!;
+
+    public Action<MouseEventArgs> OnMouseOver { get; set; } = default!;
 }

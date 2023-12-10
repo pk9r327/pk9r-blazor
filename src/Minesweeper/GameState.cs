@@ -13,6 +13,10 @@ public class GameState
 
     public Face Face { get; set; } = Face.SmileFace;
 
+    public CellState? HoveredCell { get; set; }
+
+    public bool IsFocusCell { get; set; }
+
     public int MinesNotFlagged { get; private set; }
 
     public event Action? OnChange;
@@ -111,6 +115,8 @@ public class GameState
                 var cellState = new CellState(x, y);
                 cellState.OnMouseUp = (e) => MinesweeperBoard.HandleCellMouseUp(e, this, cellState);
                 cellState.OnMouseDown = (e) => MinesweeperBoard.HandleCellMouseDown(e, this, cellState);
+                cellState.OnMouseOut = (e) => MinesweeperBoard.HandleCellMouseOut(e, this, cellState);
+                cellState.OnMouseOver = (e) => MinesweeperBoard.HandleCellMouseOver(e, this, cellState);
                 cellStates[count++] = cellState;
             }
         }
