@@ -7,7 +7,7 @@ public partial class MinesweeperBoard : IDisposable
 
     public int Height => GameState.GameModeInstance.Height;
 
-    internal static void HandleCellMouseUp(MouseEventArgs mouseEventArgs, GameState gameState, CellState cellState)
+    internal static void HandleCellMouseUp(MouseEventArgs mouseEventArgs, MinesweeperState gameState, CellState cellState)
     {
         if (mouseEventArgs.Button == 0)
         {
@@ -22,7 +22,7 @@ public partial class MinesweeperBoard : IDisposable
         }
     }
 
-    internal static void HandleCellMouseDown(MouseEventArgs mouseEventArgs, GameState gameState, CellState cellState)
+    internal static void HandleCellMouseDown(MouseEventArgs mouseEventArgs, MinesweeperState gameState, CellState cellState)
     {
         if (mouseEventArgs.Button == 0)
         {
@@ -37,7 +37,7 @@ public partial class MinesweeperBoard : IDisposable
         }
     }
 
-    internal static void HandleCellMouseOut(MouseEventArgs mouseEventArgs, GameState gameState, CellState cellState)
+    internal static void HandleCellMouseOut(MouseEventArgs mouseEventArgs, MinesweeperState gameState, CellState cellState)
     {
         if (gameState.HoveredCell == cellState)
         {
@@ -45,7 +45,7 @@ public partial class MinesweeperBoard : IDisposable
         }
     }
 
-    internal static void HandleCellMouseOver(MouseEventArgs mouseEventArgs, GameState gameState, CellState cellState)
+    internal static void HandleCellMouseOver(MouseEventArgs mouseEventArgs, MinesweeperState gameState, CellState cellState)
     {
         if (gameState.HoveredCell != cellState)
         {

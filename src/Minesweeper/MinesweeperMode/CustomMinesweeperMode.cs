@@ -3,7 +3,7 @@
 /// <summary>
 /// Represents a custom game mode in the Minesweeper game.
 /// </summary>
-public class CustomGameMode : IGameMode
+public class CustomMinesweeperMode : IMinesweeperMode
 {
     /// <summary>
     /// Gets or sets the width of the game board.
@@ -21,10 +21,10 @@ public class CustomGameMode : IGameMode
     public int Mines { get; set; }
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="CustomGameMode"/> class using an existing game mode.
+    /// Initializes a new instance of the <see cref="CustomMinesweeperMode"/> class using an existing game mode.
     /// </summary>
     /// <param name="gameMode">The game mode to copy settings from.</param>
-    public CustomGameMode(IGameMode gameMode)
+    public CustomMinesweeperMode(IMinesweeperMode gameMode)
     {
         Width = gameMode.Width;
         Height = gameMode.Height;
@@ -32,12 +32,12 @@ public class CustomGameMode : IGameMode
     }
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="CustomGameMode"/> class with specified settings.
+    /// Initializes a new instance of the <see cref="CustomMinesweeperMode"/> class with specified settings.
     /// </summary>
     /// <param name="width">The width of the game board.</param>
     /// <param name="height">The height of the game board.</param>
     /// <param name="mines">The number of mines on the game board.</param>
-    public CustomGameMode(int width, int height, int mines)
+    public CustomMinesweeperMode(int width, int height, int mines)
     {
         Width = width;
         Height = height;

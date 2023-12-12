@@ -1,6 +1,6 @@
-namespace Pk9r.Blazor.Minesweeper.Components;
+﻿namespace Pk9r.Blazor.Minesweeper.Components;
 
-public class ExpertGameMode : IGameMode
+public class IntermediateMinesweeperMode : IMinesweeperMode
 {
     /// <summary>
     /// Gets the width of the game board.
@@ -18,12 +18,12 @@ public class ExpertGameMode : IGameMode
     public int Mines { get; }
 
     /// <summary>
-    /// Initializes a new instance of the ExpertGameMode class.
+    /// Initializes a new instance of the IntermediateGameMode class.
     /// </summary>
-    public ExpertGameMode()
+    public IntermediateMinesweeperMode()
     {
-        Width = 30;
+        Width = 16;
         Height = 16;
-        Mines = 99;
+        Mines = 40;
     }
 }

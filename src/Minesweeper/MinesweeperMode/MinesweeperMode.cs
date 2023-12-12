@@ -3,20 +3,20 @@
 /// <summary>
 /// Represents the game modes in Minesweeper.
 /// </summary>
-public static class GameMode
+public static class MinesweeperMode
 {
     /// <summary>
     /// Gets the beginner game mode.
     /// </summary>
-    public static BeginnerGameMode Beginner { get; } = new BeginnerGameMode();
+    public static BeginnerMinesweeperMode Beginner { get; } = new BeginnerMinesweeperMode();
 
     /// <summary>
     /// Gets the intermediate game mode.
     /// </summary>
-    public static IntermediateGameMode Intermediate { get; } = new IntermediateGameMode();
+    public static IntermediateMinesweeperMode Intermediate { get; } = new IntermediateMinesweeperMode();
 
     /// <summary>
     /// Gets the expert game mode.
     /// </summary>
-    public static ExpertGameMode Expert { get; } = new ExpertGameMode();
+    public static ExpertMinesweeperMode Expert { get; } = new ExpertMinesweeperMode();
 }

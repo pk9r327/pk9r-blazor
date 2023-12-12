@@ -1,6 +1,6 @@
 ﻿namespace Pk9r.Blazor.Minesweeper.Components;
 
-public class BeginnerGameMode : IGameMode
+public class BeginnerMinesweeperMode : IMinesweeperMode
 {
     /// <summary>
     /// Gets the width of the game board.
@@ -20,7 +20,7 @@ public class BeginnerGameMode : IGameMode
     /// <summary>
     /// Initializes a new instance of the BeginnerGameMode class.
     /// </summary>
-    public BeginnerGameMode()
+    public BeginnerMinesweeperMode()
     {
         Width = 9;
         Height = 9;

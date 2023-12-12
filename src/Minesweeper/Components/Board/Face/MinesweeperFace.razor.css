@@ -1,6 +1,6 @@
 .face {
-    width: 26px;
-    height: 26px;
+    width: calc(260px / 10 * var(--zoom) / 100);
+    height: calc(260px / 10 * var(--zoom) / 100);
     background-size: 100% 100%;
 }
 

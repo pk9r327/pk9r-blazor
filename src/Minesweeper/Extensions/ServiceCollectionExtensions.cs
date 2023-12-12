@@ -8,7 +8,7 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection AddPk9rMinesweeperComponents(this IServiceCollection services)
     {
         services.AddFluentUIComponents();
-        services.TryAddScoped<GameState>();
+        services.TryAddScoped<MinesweeperState>();
 
         return services;
     }

@@ -2,8 +2,8 @@
 
 /* General counter style */
 .counter {
-    width: 13px;
-    height: 25px;
+    width: calc(130px / 10 * var(--zoom) / 100);
+    height: calc(250px / 10 * var(--zoom) / 100);
     background-size: 100% 100%;
 }
 
@@ -57,22 +57,22 @@
 .counterleft {
     background-image: url('texture/border/counterleft.svg');
     background-size: 100% 100%;
-    width: 1px;
-    height: 27px;
+    width: calc(10px / 10 * var(--zoom) / 100);
+    height: calc(270px / 10 * var(--zoom) / 100);
 }
 
 .counterright {
     background-image: url('texture/border/counterright.svg');
     background-size: 100% 100%;
-    width: 1px;
-    height: 27px;
+    width: calc(10px / 10 * var(--zoom) / 100);
+    height: calc(270px / 10 * var(--zoom) / 100);
 }
 
 .countermiddle {
     background-image: url('texture/border/countermiddle.svg');
     display: flex;
     align-items: center;
-    width: 13px;
-    height: 27px;
+    width: calc(130px / 10 * var(--zoom) / 100);
+    height: calc(270px / 10 * var(--zoom) / 100);
     background-size: 100% 100%;
 }

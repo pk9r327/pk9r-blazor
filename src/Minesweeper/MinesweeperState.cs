@@ -1,9 +1,9 @@
 ﻿using Pk9r.Blazor.Minesweeper.Components.Extensions;
 
 namespace Pk9r.Blazor.Minesweeper.Components;
-public class GameState
+public class MinesweeperState
 {
-    public IGameMode GameModeInstance { get; private set; } = default!;
+    public IMinesweeperMode GameModeInstance { get; private set; } = default!;
 
     public CellState[] CellStates { get; private set; } = default!;
 
@@ -21,12 +21,12 @@ public class GameState
 
     public event Action? OnChange;
 
-    public GameState()
+    public MinesweeperState()
     {
-        NewGame(GameMode.Expert);
+        NewGame(MinesweeperMode.Expert);
     }
 
-    public void NewGame(IGameMode gameMode)
+    public void NewGame(IMinesweeperMode gameMode)
     {
         GameModeInstance = gameMode;
         NewGame();

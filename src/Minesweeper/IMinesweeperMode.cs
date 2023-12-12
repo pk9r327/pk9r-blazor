@@ -1,6 +1,9 @@
 ﻿namespace Pk9r.Blazor.Minesweeper.Components;
 
-public class IntermediateGameMode : IGameMode
+/// <summary>
+/// Interface for defining the game mode in Minesweeper.
+/// </summary>
+public interface IMinesweeperMode
 {
     /// <summary>
     /// Gets the width of the game board.
@@ -16,14 +19,4 @@ public class IntermediateGameMode : IGameMode
     /// Gets the number of mines on the game board.
     /// </summary>
     public int Mines { get; }
-
-    /// <summary>
-    /// Initializes a new instance of the IntermediateGameMode class.
-    /// </summary>
-    public IntermediateGameMode()
-    {
-        Width = 16;
-        Height = 16;
-        Mines = 40;
-    }
 }

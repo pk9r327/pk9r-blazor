@@ -1,8 +1,8 @@
 @namespace Pk9r.Blazor.Minesweeper.Components
 @inherits FluentComponentBase
-@inject GameState GameState
+@inject MinesweeperState GameState
 
-<div style="display: flex; flex-direction: column; width: min-content;"
+<div class="board" style="display: flex; flex-direction: column; width: min-content; --zoom: 100"
      oncontextmenu="return false;" ondrag="return false;" ondragstart="return false;">
     <div style="display: inline-flex;">
         <div class="topleft" />
@@ -84,5 +84,9 @@
 </div>
 
 @code {
-
+    // private RenderFragment<string> _elementBuilder = (string element) =>
+    // {
+    //     stylee
+    //     return @<div class="@element" />
+    // }
 }
