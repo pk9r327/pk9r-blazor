@@ -1,10 +1,18 @@
 ﻿@inherits LayoutComponentBase
 
 <Pk9rFluentBlazorDemoLayout>
+    <NavMenuContent>
+        <FluentNavLink Icon="@(new Icons.Regular.Size20.Home())" Href="/" Match="NavLinkMatch.All">
+            <h3>Home</h3>
+        </FluentNavLink>
 
+        <FluentNavLink Icon="@(new Icons.Regular.Size20.Flag())" Href="/minesweeper">Minesweeper</FluentNavLink>
+    </NavMenuContent>
+    <Body>
+        @Body
+    </Body>
 </Pk9rFluentBlazorDemoLayout>
 
-@Body
 
 <div id="blazor-error-ui">
     An unhandled error has occurred.
