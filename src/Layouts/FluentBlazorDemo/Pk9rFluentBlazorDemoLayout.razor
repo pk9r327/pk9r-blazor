@@ -1,9 +1,8 @@
-﻿@inherits FluentComponentBase
+﻿@using System.Runtime.InteropServices
+@inherits FluentComponentBase
 
 <FluentLayout>
-    <FluentHeader Class="siteheader" />
-    <FluentHeader Class="siteheader" />
-    <header class="siteheader">
+    <FluentHeader Class="siteheader">
         <a href="/">
             <div class="logo" role="presentation" aria-hidden="true" itemprop="logo" itemscope="itemscope">
                 <svg xmlns="http://www.w3.org/2000/svg" width="108" height="23" viewBox="72 72 337 74" preserveAspectRatio="xMidYMin slice">
@@ -23,18 +22,68 @@
             </div>
         </a>
         <FluentSpacer />
-@*         <div class="links">
-            <FluentAnchor Appearance="Appearance.Hypertext"
-                          Href="http://github.com/microsoft/fluentui-blazor" Target="_blank" Rel="noreferrer noopener"
-                          title="FluentUI Blazor source on GitHub" aria-label="FluentUI Blazor Repo">
-                <FluentIcon Value="@(new DemoIcons.Size20.GitHub())" Color="Color.FillInverse" />
-            </FluentAnchor>
+        @*         <div class="links">
+        <FluentAnchor Appearance="Appearance.Hypertext"
+        Href="http://github.com/microsoft/fluentui-blazor" Target="_blank" Rel="noreferrer noopener"
+        title="FluentUI Blazor source on GitHub" aria-label="FluentUI Blazor Repo">
+        <FluentIcon Value="@(new DemoIcons.Size20.GitHub())" Color="Color.FillInverse" />
+        </FluentAnchor>
         </div>
         <div class="notifications">
-            <NotificationCenter />
+        <NotificationCenter />
         </div>
         <div class="settings">
-            <SiteSettings />
+        <SiteSettings />
         </div> *@
-    </header>
+    </FluentHeader>
+
+    <FluentStack Class="body-stack" Orientation="Orientation.Horizontal" Width="100%" HorizontalGap="0">
+        <div class="navmenu">
+            <input type="checkbox" id="navmenu-toggle" class="navmenu-icon" />
+            <nav class="sitenav" aria-labelledby="main-menu" onclick="document.getElementById('navmenu-toggle').click()">
+                <FluentNavMenu Id="main-menu" Title="Main menu">
+                    @NavMenuContent
+                </FluentNavMenu>
+            </nav>
+        </div>
+
+        <FluentBodyContent id="body-content" Style="height: calc(100dvh - 90px);">
+            <div class="content">
+                <article id="article">
+
+                    @* <FluentMessageBarProvider Section="@App.MESSAGES_TOP" /> *@
+
+
+                    @* <CascadingValue Value=@OnRefreshTableOfContents> *@
+                    @Body
+                    @* </CascadingValue> *@
+
+                </article>
+                <aside>
+                    @* <TableOfContents @ref=_toc />
+                    <ConsoleLog /> *@
+                </aside>
+
+                <FluentToastProvider MaxToastCount="10" />
+                <FluentDialogProvider />
+                <FluentTooltipProvider />
+            </div>
+        </FluentBodyContent>
+    </FluentStack>
+
+    <FluentFooter Style="@("height: 40px; color: white;")">
+        <div class="version">
+            <small>
+                Version: @_version
+                &nbsp;-&nbsp;
+                <a href="https://dotnet.microsoft.com/en-us/learn/aspnet/what-is-aspnet-core">Powered by @RuntimeInformation.FrameworkDescription</a>
+            </small>
+        </div>
+        <FluentSpacer />
+
+        <div class="copy">
+            <small>Microsoft © 2023. All rights reserved.</small>
+        </div>
+    </FluentFooter>
 </FluentLayout>
+

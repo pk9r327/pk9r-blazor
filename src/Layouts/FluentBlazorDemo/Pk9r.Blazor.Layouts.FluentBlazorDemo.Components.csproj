@@ -19,8 +19,4 @@
     <ProjectReference Include="..\..\Core\Pk9r.Blazor.Components.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="wwwroot\" />
-  </ItemGroup>
-
 </Project>
